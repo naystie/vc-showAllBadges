@@ -4,12 +4,13 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
+import { Devs } from "@utils/constants";
 import definePlugin from "@utils/types";
 
 export default definePlugin({
     name: "ShowAllBadges",
     description: "Shows all profile badges without hiding any behind '+N'",
-    authors: [{ name: "Nays", id: 344871509677965313n }],
+    authors: [Devs.Nays],
     tags: ["Appearance"],
 
     patches: [
