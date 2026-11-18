@@ -19,11 +19,11 @@ export default definePlugin({
             group: true,
             replacement: [
                 {
-                    match: /Math\.max\(\i\.length-\i\.\i,0\)/,
+                    match: /Math\.max\(\i\.length-[\w$.]+,0\)/,
                     replace: "0"
                 },
                 {
-                    match: /(?<=\[\i)\.slice\(0,\i\.\i\)(?=\])/,
+                    match: /(?<=\[\i)\.slice\(0,[\w$.]+\)(?=\])/,
                     replace: ""
                 }
             ]
