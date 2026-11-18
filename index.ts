@@ -16,17 +16,11 @@ export default definePlugin({
     patches: [
         {
             find: '"UserProfileBadgeListRows"',
-            group: true,
-            replacement: [
-                {
-                    match: /Math\.max\(\i\.length-[\w$.]+,0\)/,
-                    replace: "0"
-                },
-                {
-                    match: /(?<=\[\i)\.slice\(0,[\w$.]+\)(?=\])/,
-                    replace: ""
-                }
-            ]
+            replacement: {
+                // the badge management experiment is what cuts the list to six and a +N
+                match: /\(0,\i\.\i\)\(\{location:"UserProfileBadgeListRows"\}\)/,
+                replace: "!1"
+            }
         }
     ]
 });
